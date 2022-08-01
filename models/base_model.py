@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ Defines all common attributes/methods."""
+import models
 from uuid import uuid4
 from datetime import datetime
 
@@ -27,8 +28,7 @@ class BaseModel:
                 else:
                     self.__dict__[index] = jndex
         else:
-            self.id = str(uuid4())
-            self.created_at = datetime.today()
+            models.storage.new(self)
 
     def __str__(self):
         """ Return the print/str representation the BaseModel instance. """
@@ -40,7 +40,8 @@ class BaseModel:
         Updates the public instance attribute updated_at
         with the current datetime.
         """
-        self.update_at = datetime.today()
+        self.updated_at = datetime.today()
+        models.storage.save()
 
     def to_dict(self):
         """
