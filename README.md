@@ -1,7 +1,7 @@
 <p style="text=-align : center">
     <img src="https://github.com/ShagizMan/AirBnB_clone/blob/master/assets/alx-bnb_logo.png" alt="logo_AirBnB">
 </p>
-<h1 style="text-align : center"> AirBnB_clone </h1>
+<h1 align:center> AirBnB Clone </h1>
 
 ## Descriptions :house:
 
