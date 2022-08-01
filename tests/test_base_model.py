@@ -26,6 +26,7 @@ class TestBaseModel_instatiation(unittest.TestCase):
         bm2 = BaseModel()
         self.assertNotEqual(bm1.id, bm2.id)
 
+
 class testBaseModel_save(unittest.TestCase):
     """ Unittest for the save method of BaseModel. """
 
@@ -36,12 +37,14 @@ class testBaseModel_save(unittest.TestCase):
         bm.save()
         self.assertLess(first_updated_at, bm.updated_at)
 
+
 class TestBaseModel_to_dict(unittest.TestCase):
     """Unittests for testing to_dict method of the BaseModel class."""
 
     def test_to_dict_type(self):
         bm = BaseModel()
         self.assertTrue(dict, type(bm.to_dict()))
+
 
 if __name__ == "__main__":
     unittest.main()
