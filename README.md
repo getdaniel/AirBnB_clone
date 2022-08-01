@@ -59,4 +59,4 @@ $
 
 ## Authors :black-nib:
 * **Daniel Shibabaw** <[ShagizMan](https://github.com/ShagizMan)>
-* **Mercy Mukiri** <>
+* **Mercy Mukiri** <[MercyMukiri](https://github.com/MercyMukiri)>
