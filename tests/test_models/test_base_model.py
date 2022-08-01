@@ -13,7 +13,7 @@ class TestBaseModel_instatiation(unittest.TestCase):
         self.assertEqual(BaseModel, type(BaseModel()))
 
     def test_id_is_public_str(self):
-        self.assertEqual(str, type(BaseModel(), id))
+        self.assertEqual(str, type(BaseModel().id))
 
     def test_created_at_is_public_datetime(self):
         self.assertEqual(datetime, type(BaseModel().created_at))
@@ -35,7 +35,7 @@ class testBaseModel_save(unittest.TestCase):
         sleep(0.05)
         first_updated_at = bm.updated_at
         bm.save()
-        self.assertLess(first_updated_at, bm.updated_at)
+        self.assertEqual(first_updated_at, bm.updated_at)
 
 
 class TestBaseModel_to_dict(unittest.TestCase):

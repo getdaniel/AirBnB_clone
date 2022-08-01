@@ -7,11 +7,28 @@ from datetime import datetime
 class BaseModel:
     """ Represents the BaseModel of the AirBnB project. """
 
-    def __init__(self):
-        """ Initialize a new BaseModel. """
+    def __init__(self, *args, **kwargs):
+        """
+        Initialize a new BaseModel.
+
+        Args:
+            *args (any): Won't be used.
+            **kwargs (dict): Key/Value pairsof the attributes.
+        """
         self.id = str(uuid4())
         self.created_at = datetime.today()
         self.updated_at = datetime.today()
+        timeformat = "%Y-%m-%dT%H:%M:%S.%f"
+
+        if len(kwargs) != 0:
+            for index, jndex in kwargs.items():
+                if index == "created_at" or index == "updated_at":
+                    self.__dict__[index] = datetime.strptime(jndex, timeformat)
+                else:
+                    self.__dict__[index] = jndex
+        else:
+            self.id = str(uuid4())
+            self.created_at = datetime.today()
 
     def __str__(self):
         """ Return the print/str representation the BaseModel instance. """
