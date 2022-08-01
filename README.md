@@ -1,4 +1,4 @@
-<p style="text=-align : center">
+<p align=center>
     <img src="https://github.com/ShagizMan/AirBnB_clone/blob/master/assets/alx-bnb_logo.png" alt="logo_AirBnB">
 </p>
 
