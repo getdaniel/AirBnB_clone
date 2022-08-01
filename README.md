@@ -3,11 +3,11 @@
 </p>
 <h1 style="text-align : center"> AirBnB_clone </h1>
 
-## Descriptions The AirBnB :house:
+## Descriptions :house:
 
 AirBnB is a complete web application, integrating database storage, a back-end API, and front-end interfacing in a clone of AirBnB.
 
-## Description of Console :computer:
+## Console :computer:
 
 The console is a command line interpreter that permits management of the backend of AirBnB. It can be used to handle and manipulate all classes utilized by the application.
 
