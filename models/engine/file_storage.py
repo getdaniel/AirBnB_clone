@@ -2,12 +2,14 @@
 """ Defines FileStorage class. """
 import json
 from models.base_model import BaseModel
+from models.user import User
 
 
 class FileStorage:
-    """ 
-    Serializes instances to a JSON file and deserializes JSON file to instances
-    
+    """
+    Serializes instances to a JSON file and deserializes
+    JSON file to instances.
+
     Attributes:
         __file_path (str): Path to the JSON file.
         __objects (dict): Store all objects.
@@ -24,7 +26,7 @@ class FileStorage:
         obj_name = obj.__class__.__name__
         FileStorage.__objects["{}.{}".format(obj_name, obj.id)] = obj
 
-    def save (self):
+    def save(self):
         """ Serializes __objects to the JSON file."""
         obj_dict = FileStorage.__objects
         objd = {obj: obj_dict[obj].to_dict() for obj in obj_dict.keys()}
