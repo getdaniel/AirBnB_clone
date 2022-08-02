@@ -40,6 +40,7 @@ class HBNBCommand(cmd.Cmd):
                 "destroy": self.do_destroy,
                 "all": self.do_all,
                 "update": self.do_update,
+                "count": self.do_count
                 }
         match = re.search(r"\.", arg)
         if match is not None:
@@ -82,8 +83,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, arg):
         """
-        Prints the string representation of an instance based on
-        the class name and id.
+        Prints the string representation of an instance.
         """
         argl = parse(arg)
         objd = storage.all()
@@ -118,8 +118,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, arg):
         """
-        Prints all string representation of all instances based
-        or not on the class name.
+        Prints all string representation of all instances based.
         """
         argl = parse(arg)
 
@@ -137,10 +136,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(sel, arg):
         """
-        Updates an instance based on the class name and id by
-        adding or updating attribute.
-
-        update <class name> <id> <attribute name> "<attribute value>
+        Updates an instance based on the class name and id.
         """
         argl = parse(arg)
         objd = storage.all()
@@ -192,6 +188,16 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     obj.__dict__[index] = jndex
         storage.save()
+
+    def do_count(self, arg):
+        """ Retrieve the number of instances of a class."""
+        argl = parse(arg)
+        count = 0
+
+        for obj in storage.all().values():
+            if argl[0] == obj.__class__.__name__:
+                count += 1
+        print(count)
 
 
 def parse(arg):
