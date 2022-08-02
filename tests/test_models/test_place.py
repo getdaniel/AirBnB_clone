@@ -5,6 +5,7 @@ import models
 from datetime import datetime
 from models.place import Place
 
+
 class TestPlace_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the Place class."""
 
@@ -23,6 +24,7 @@ class TestPlace_instantiation(unittest.TestCase):
     def test_updated_at_is_public_datetime(self):
         self.assertEqual(datetime, type(Place().updated_at))
 
+
 class TestPlace_save(unittest.TestCase):
     """Unittests for testing save method of the Place class."""
 
@@ -37,6 +39,7 @@ class TestPlace_save(unittest.TestCase):
         plid = "Place." + pl.id
         with open("file.json", "r") as f:
             self.assertIn(plid, f.read())
+
 
 class TestPlace_to_dict(unittest.TestCase):
     """Unittests for testing to_dict method of the Place class."""

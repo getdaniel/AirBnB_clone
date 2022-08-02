@@ -5,6 +5,7 @@ import models
 from datetime import datetime
 from models.user import User
 
+
 class TestUser_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the User class."""
 

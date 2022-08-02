@@ -5,6 +5,7 @@ import models
 from datetime import datetime
 from models.state import State
 
+
 class TestState_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the State class."""
 
@@ -38,6 +39,7 @@ class TestState_save(unittest.TestCase):
         stid = "State." + st.id
         with open("file.json", "r") as f:
             self.assertIn(stid, f.read())
+
 
 class TestState_to_dict(unittest.TestCase):
     """Unittests for testing to_dict method of the State class."""
