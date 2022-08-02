@@ -35,7 +35,7 @@ class testBaseModel_save(unittest.TestCase):
         sleep(0.05)
         first_updated_at = bm.updated_at
         bm.save()
-        self.assertEqual(first_updated_at, bm.updated_at)
+        self.assertLess(first_updated_at, bm.updated_at)
 
 
 class TestBaseModel_to_dict(unittest.TestCase):
