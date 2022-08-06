@@ -1,10 +1,18 @@
 #!/usr/bin/python3
-""" Defines unittest for models/engine/file_storage.py."""
-import unittest
+"""Defines unittests for models/engine/file_storage.py.
+
+Unittest classes:
+    TestFileStorage_instantiation
+    TestFileStorage_methods
+"""
+import os
+import json
 import models
+import unittest
+from datetime import datetime
 from models.base_model import BaseModel
-from models.user import User
 from models.engine.file_storage import FileStorage
+from models.user import User
 from models.state import State
 from models.place import Place
 from models.city import City
@@ -34,6 +42,25 @@ class TestFileStorage_instantiation(unittest.TestCase):
 
 class TestFileStorage_methods(unittest.TestCase):
     """Unittests for testing methods of the FileStorage class."""
+
+    @classmethod
+    def setUp(self):
+        try:
+            os.rename("file.json", "tmp")
+        except IOError:
+            pass
+
+    @classmethod
+    def tearDown(self):
+        try:
+            os.remove("file.json")
+        except IOError:
+            pass
+        try:
+            os.rename("tmp", "file.json")
+        except IOError:
+            pass
+        FileStorage._FileStorage__objects = {}
 
     def test_all(self):
         self.assertEqual(dict, type(models.storage.all()))
@@ -136,6 +163,9 @@ class TestFileStorage_methods(unittest.TestCase):
         self.assertIn("City." + cy.id, objs)
         self.assertIn("Amenity." + am.id, objs)
         self.assertIn("Review." + rv.id, objs)
+
+    def test_reload_no_file(self):
+        self.assertRaises(FileNotFoundError, models.storage.reload())
 
     def test_reload_with_arg(self):
         with self.assertRaises(TypeError):
