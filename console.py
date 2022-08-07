@@ -150,7 +150,7 @@ class HBNBCommand(cmd.Cmd):
                     objl.append(obj.__str__())
             print(objl)
 
-    def do_update(sel, arg):
+    def do_update(self, arg):
         """
         Updates an instance based on the class name and id.
         """
