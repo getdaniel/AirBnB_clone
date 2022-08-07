@@ -51,7 +51,7 @@ class HBNBCommand(cmd.Cmd):
 
     def default(self, arg):
         """ Improves the default cmd. """
-        argdict = { 
+        argdict = {
                 "show": self.do_show,
                 "destroy": self.do_destroy,
                 "all": self.do_all,
