@@ -130,7 +130,7 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
         else:
             del objd["{}.{}".format(argl[0], argl[1])]
-            storage.save
+            storage.save()
 
     def do_all(self, arg):
         """
