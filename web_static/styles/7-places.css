@@ -23,16 +23,14 @@
  /* Places Style */
  .places article {
     width: 390px;
-    padding: 20px;
-    margin: 20px;
+    padding: 10px 10px 10px 10px;
+    margin: -10px 10px 20px 10px;
     border: 1px solid #FF5A5F;
     border-radius: 4px;
-    grid-row-start: 2;
     display: flex;
-    order: 2;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: space-between;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
  }
 
  /* Header 2 Style */
