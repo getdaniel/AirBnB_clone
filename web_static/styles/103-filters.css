@@ -106,3 +106,42 @@
     font-weight: bold;
     margin: 12px auto 0 -18px;
   }
+
+  /*
+ * --- Filters responsive sizing ---
+ */
+
+/* Maintain shape of search bar as screen gets smaller */
+@media only screen and (max-width: 1000px) {
+  .filters {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+/* Swap to vertical layout for small screens */
+@media only screen and (max-width: 720px) {
+  .filters {
+    display: grid;
+    height: 210px;
+  }
+
+  .filters .locations,
+  .filters .amenities {
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .filters .locations:hover .popover,
+  .filters .amenities:hover .popover {
+    margin-left: auto;
+    position: relative;
+    width: 50%;
+    z-index: 1;
+  }
+
+  .filters .amenities:hover {
+    border-top: 1px solid #ddd;
+  }
+}

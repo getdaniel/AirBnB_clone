@@ -174,3 +174,22 @@
    margin-left: -40px;
    margin-bottom: 20px;
  }
+
+ /*
+ * -- Places header style --
+ */
+
+/* Header 1 style */
+.places h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: .67em 0 .67em 0;
+  width: 100%;
+}
+
+/* Align header 1 as screen gets smaller */
+@media only screen and (max-width: 1000px) {
+  .places h1 {
+    width: 95%;
+  }
+}
