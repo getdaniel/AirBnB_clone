@@ -17,5 +17,14 @@ body {
 .container {
     margin: 30px auto;
     max-width: 1000px;
+    height: 250%;
     padding-bottom: 2.5rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
 }
